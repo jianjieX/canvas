@@ -54,7 +54,7 @@ eventPreview(){
         views: [
           {
             type: 'image',
-            url: 'https://hybrid.xiaoying.tv/miniprogram/viva-ad/1/1531385366950.jpeg',
+            url: 'https://hybrid.xiaoying.tv/miniprogram/viva-ad/1/1531385366950.jpeg',//商品图
             top: 0,
             left: 0,
             width: 528*rpx,
@@ -164,7 +164,7 @@ eventPreview(){
           },
           {
             type: 'image',
-            url:'https://hybrid.xiaoying.tv/miniprogram/viva-ad/1/1531385433625.jpeg',
+            url:'https://hybrid.xiaoying.tv/miniprogram/viva-ad/1/1531385433625.jpeg', //小程序码，需要后台配合返回
             top: 618*rpx,
             left: 404*rpx,
             width: 90*rpx,
