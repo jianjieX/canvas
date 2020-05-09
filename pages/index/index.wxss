@@ -1,10 +1,19 @@
 .share-image {
-  width: 600rpx;
-  height: 888rpx;
-  margin: 0 75rpx;
+  width:528rpx;
+  height: 752rpx;
   border: 1px solid black;
+  border-radius: 10px;
 }
 
 button {
   margin-top: 20rpx;
+  flex:0.3;
+  font-size: 32rpx;
+}
+.eventBtns{
+  display: flex;
+  justify-content: space-around;
+}
+.container{
+  text-align: center;
 }

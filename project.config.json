@@ -12,9 +12,11 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.2.0",
-	"appid": "",
+	"appid": "wxd556690ea5e45973",
 	"projectname": "mp_canvas_drawer",
 	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,
@@ -32,6 +34,10 @@
 			"currentL": -1,
 			"list": []
 		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
 		"miniprogram": {
 			"current": -1,
 			"list": [
@@ -46,6 +52,12 @@
 					"name": "普通绘制",
 					"pathName": "pages/index/index",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "mult",
+					"pathName": "pages/multiple/multiple",
+					"scene": null
 				}
 			]
 		}

@@ -1,8 +1,14 @@
 <!--index.wxml-->
 <view class="container">
+<view hidden="{{shareMask == false}}">
+  <button bind:tap='eventClose'>关闭</button>
   <image src="{{shareImage}}" class="share-image"></image>
-  <canvasdrawer painting="{{painting}}" class="canvasdrawer" bind:getImage="eventGetImage"/>
+</view> 
+  <canvasdrawer painting="{{painting}}" class="canvasdrawer" bind:getImage="eventGetImage" bind:myevent='change'/>
 
-  <button bind:tap="eventDraw">绘制</button>
-  <button bind:tap="eventSave">保存到本地</button>
+  <view class="eventBtns">
+      <button bind:tap="eventDraw">绘制</button>
+      <button bind:tap="eventPreview">预览</button>
+      <button bind:tap="eventSave">保存到本地</button>
+  </view>
 </view>

@@ -18,6 +18,7 @@ Component({
           } else {
             if (newVal && newVal.mode !== 'same') {
               this.triggerEvent('getImage', {errMsg: 'canvasdrawer:samme params'})
+              this.triggerEvent('myevent', {shareMask:true})
             }
           }
         }
@@ -277,6 +278,7 @@ Component({
               tempFileList: []
             })
             this.triggerEvent('getImage', {tempFilePath: res.tempFilePath, errMsg: 'canvasdrawer:ok'})
+            this.triggerEvent('myevent',{shareMask:true},{})
           } else {
             this.triggerEvent('getImage', {errMsg: 'canvasdrawer:fail'})
           }

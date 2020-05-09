@@ -3,128 +3,183 @@
 Page({
   data: {
     painting: {},
-    shareImage: ''
+    shareImage: '',
+    shareMask:false,
+    rpx:''
   },
   onLoad () {
     // this.eventDraw()
   },
+  onShow(){
+      //获取设备宽度
+      var that=this;
+      wx.getSystemInfo({
+        success: function(res) {
+          var rpx= res.windowWidth/375;
+          that.setData({
+            rpx:rpx
+          })
+        },
+      })
+  },
+change(e){
+  this.setData({
+    shareMask:e.detail.shareMask
+  })
+},
+eventClose(){
+  this.setData({
+    shareMask:false
+  })
+},
+  //海报预览图
+eventPreview(){
+  var wximg = this.data.shareImage;
+  wx.previewImage({
+    current: wximg,
+    urls: [wximg]
+  })
+},
   eventDraw () {
     wx.showLoading({
       title: '绘制分享图片中',
       mask: true
     })
+    let rpx=this.data.rpx; //设备比率
     this.setData({
       painting: {
-        width: 375,
-        height: 555,
+        width: 528*rpx,
+        height: 752*rpx,
         clear: true,
         views: [
           {
             type: 'image',
-            url: 'https://hybrid.xiaoying.tv/miniprogram/viva-ad/1/1531103986231.jpeg',
+            url: 'https://hybrid.xiaoying.tv/miniprogram/viva-ad/1/1531385366950.jpeg',
             top: 0,
             left: 0,
-            width: 375,
-            height: 555
+            width: 528*rpx,
+            height: 528*rpx
           },
           {
-            type: 'image',
-            url: 'https://wx.qlogo.cn/mmopen/vi_32/DYAIOgq83epJEPdPqQVgv6D8bojGT4DrGXuEC4Oe0GXs5sMsN4GGpCegTUsBgL9SPJkN9UqC1s0iakjQpwd4h4A/132',
-            top: 27.5,
-            left: 29,
-            width: 55,
-            height: 55
-          },
-          {
-            type: 'image',
-            url: 'https://hybrid.xiaoying.tv/miniprogram/viva-ad/1/1531401349117.jpeg',
-            top: 27.5,
-            left: 29,
-            width: 55,
-            height: 55
+            type: 'rect',
+            background: '#fff',
+            top: 528*rpx,
+            left: 0,
+            width: 528*rpx,
+            height: 224*rpx
           },
           {
             type: 'text',
-            content: '您的好友【kuckboy】',
-            fontSize: 16,
-            color: '#402D16',
+            content: '我还是从前那个少年，没有一丝丝改变。我还是从前那个少年，没有一丝丝改变。我还是从前那个少年，没有一丝丝改变。我还是从前那个少年，没有一丝丝改变。',
+            fontSize: 20*rpx,
+            lineHeight: 34*rpx,
+            color: '#333',
             textAlign: 'left',
-            top: 33,
-            left: 96,
-            bolder: true
-          },
-          {
-            type: 'text',
-            content: '发现一件好货，邀请你一起0元免费拿！',
-            fontSize: 15,
-            color: '#563D20',
-            textAlign: 'left',
-            top: 59.5,
-            left: 96
-          },
-          {
-            type: 'image',
-            url: 'https://hybrid.xiaoying.tv/miniprogram/viva-ad/1/1531385366950.jpeg',
-            top: 136,
-            left: 42.5,
-            width: 290,
-            height: 186
-          },
-          {
-            type: 'image',
-            url: 'https://hybrid.xiaoying.tv/miniprogram/viva-ad/1/1531385433625.jpeg',
-            top: 443,
-            left: 85,
-            width: 68,
-            height: 68
-          },
-          {
-            type: 'text',
-            content: '正品MAC魅可口红礼盒生日唇膏小辣椒Chili西柚情人',
-            fontSize: 16,
-            lineHeight: 21,
-            color: '#383549',
-            textAlign: 'left',
-            top: 336,
-            left: 44,
-            width: 287,
+            top: 539*rpx,
+            left: 16*rpx,
+            width: 480*rpx,
             MaxLineNumber: 2,
             breakWord: true,
             bolder: true
           },
           {
             type: 'text',
-            content: '￥0.00',
-            fontSize: 19,
-            color: '#E62004',
+            content: '特权价￥',
+            fontSize: 20*rpx,
+            lineHeight: 44*rpx,
+            color: '#F52340',
             textAlign: 'left',
-            top: 387,
-            left: 44.5,
+            top: 610*rpx,
+            left: 16*rpx,
+            width: 82*rpx,
+          },
+          {
+            type: 'text',
+            content:'66.00',
+            fontSize: 32*rpx,
+            lineHeight: 44*rpx,
+            color: '#F52340',
+            textAlign: 'left',
+            top: 602*rpx,
+            left: 100*rpx,
             bolder: true
           },
           {
             type: 'text',
-            content: '原价:￥138.00',
-            fontSize: 13,
-            color: '#7E7E8B',
+            content:'售价￥',
+            fontSize: 20*rpx,
+            lineHeight: 28*rpx,
+            color: '#999',
             textAlign: 'left',
-            top: 391,
-            left: 110,
-            textDecoration: 'line-through'
+            top: 644*rpx,
+            left: 16*rpx
           },
           {
             type: 'text',
-            content: '长按识别图中二维码帮我砍个价呗~',
-            fontSize: 14,
-            color: '#383549',
+            content:'99.00',
+            fontSize: 20*rpx,
+            lineHeight: 28*rpx,
+            color: '#999',
             textAlign: 'left',
-            top: 460,
-            left: 165.5,
-            lineHeight: 20,
-            MaxLineNumber: 2,
-            breakWord: true,
-            width: 125
-          }
+            top: 644*rpx,
+            left: 78*rpx,
+            textDecoration:'line-through'
+          },
+          {
+            type: 'image',
+            url: '../../images/atavurl.jpg',
+            top: 684*rpx,
+            left: 16*rpx,
+            width: 52*rpx,
+            height: 52*rpx
+          },
+          {
+            type: 'image',
+            url: '../../images/hollow.png',
+            top: 684*rpx,
+            left: 16*rpx,
+            width: 52*rpx,
+            height: 52*rpx
+          },
+          {
+            type: 'text',
+            content:'叫我狐歌啊',
+            fontSize: 20*rpx,
+            lineHeight: 28*rpx,
+            color: '#666',
+            textAlign: 'left',
+            top: 686*rpx,
+            left: 76*rpx,
+            bolder:true
+          },
+          {
+            type: 'text',
+            content:'邀请好友享受内部优惠价',
+            fontSize: 16*rpx,
+            lineHeight: 22*rpx,
+            color: '#666',
+            textAlign: 'left',
+            top: 714*rpx,
+            left: 76*rpx
+          },
+          {
+            type: 'image',
+            url:'https://hybrid.xiaoying.tv/miniprogram/viva-ad/1/1531385433625.jpeg',
+            top: 618*rpx,
+            left: 404*rpx,
+            width: 90*rpx,
+            height: 90*rpx
+          },
+          {
+            type: 'text',
+            content:'长按识别',
+            fontSize: 16*rpx,
+            lineHeight: 22*rpx,
+            color: '#999',
+            textAlign: 'left',
+            top: 714*rpx,
+            left: 418*rpx
+          },
         ]
       }
     })
