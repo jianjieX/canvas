@@ -41,7 +41,7 @@
 
 ## 使用
 
-- `git clone https://github.com/kuckboy1994/mp_canvas_drawer` 到本地
+- `git clone https://github.com/jianjieX/canvas.git` 到本地
 - 把 `components` 中的 `canvasdrawer` 拷贝到自己项目下。
 - 在使用页面注册组件
   ```json
@@ -288,5 +288,6 @@ height | 要画多高 | 0 |
     - 保存到本地，返回临时文件给调用者一定是最佳的解决方式。
     - 展示，转化成图片之后，就可以使用 `image` 基础组件的所有显示模式了，还能设置宽高。
 
+##原作者：`https://github.com/kuckboy1994/mp_canvas_drawer`
 
 
