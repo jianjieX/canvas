@@ -288,8 +288,8 @@ height | 要画多高 | 0 |
     - 保存到本地，返回临时文件给调用者一定是最佳的解决方式。
     - 展示，转化成图片之后，就可以使用 `image` 基础组件的所有显示模式了，还能设置宽高。
 
-### ！！！注意
-# 一、海报中商品图，如果后台返回图片比例不一致，可利用阿里云oss统一修改图片格式大小
+## ！！！注意
+### 一、海报中商品图，如果后台返回图片比例不一致，可利用阿里云oss统一修改图片格式大小
 
 阿里云oss修改图片格式 （直接在url地址后拼接，建议在后端修改）参数：url+?x-oss-process=image/resize,m_fixed,h_600,w_600,limit_0
 - lfit：等比缩放，限制在指定w与h的矩形内的最大图片。
@@ -301,10 +301,12 @@ height | 要画多高 | 0 |
 
 - 例如：https://ylhmuying.oss-cn-beijing.aliyuncs.com/other/20191115112545366Dh.jpg?x-oss-process=image/resize,m_fixed,h_600,w_600,limit_0
 
-# 二、生成微信小程序码
+### 二、生成微信小程序码
 - 后台调用生产，返回前端小程序码链接
 - 参照：wxacode.getUnlimited
 - 详见: https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/qr-code/wxacode.getUnlimited.html
-## 原作者：`https://github.com/kuckboy1994/mp_canvas_drawer`
+
+
+### 原作者：`https://github.com/kuckboy1994/mp_canvas_drawer`
 
 
